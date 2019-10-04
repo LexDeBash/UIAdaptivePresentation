@@ -14,7 +14,6 @@
 		A8FC0E43234746710002FD14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8FC0E42234746710002FD14 /* Assets.xcassets */; };
 		A8FC0E46234746710002FD14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FC0E44234746710002FD14 /* LaunchScreen.storyboard */; };
 		A8FC0E4E23474C680002FD14 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FC0E4D23474C680002FD14 /* NewContactViewController.swift */; };
-		A8FC0E5523474E3D0002FD14 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FC0E5423474E3D0002FD14 /* Contact.swift */; };
 		A8FC0E5823474F670002FD14 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FC0E5723474F670002FD14 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		A8FC0E45234746710002FD14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8FC0E47234746710002FD14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8FC0E4D23474C680002FD14 /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
-		A8FC0E5423474E3D0002FD14 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		A8FC0E5723474F670002FD14 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +62,6 @@
 			children = (
 				A8FC0E4F23474D1C0002FD14 /* ViewControllers */,
 				A8FC0E5623474F430002FD14 /* Services */,
-				A8FC0E5323474E140002FD14 /* Models */,
 				A8FC0E5123474D970002FD14 /* StoryBoards */,
 				A8FC0E5223474DA30002FD14 /* Resources */,
 				A8FC0E5023474D530002FD14 /* App */,
@@ -106,14 +103,6 @@
 				A8FC0E42234746710002FD14 /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		A8FC0E5323474E140002FD14 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A8FC0E5423474E3D0002FD14 /* Contact.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		A8FC0E5623474F430002FD14 /* Services */ = {
@@ -198,7 +187,6 @@
 				A8FC0E3E2347466F0002FD14 /* ContactListViewController.swift in Sources */,
 				A8FC0E5823474F670002FD14 /* DataManager.swift in Sources */,
 				A8FC0E3A2347466F0002FD14 /* AppDelegate.swift in Sources */,
-				A8FC0E5523474E3D0002FD14 /* Contact.swift in Sources */,
 				A8FC0E4E23474C680002FD14 /* NewContactViewController.swift in Sources */,
 				A8FC0E3C2347466F0002FD14 /* SceneDelegate.swift in Sources */,
 			);
