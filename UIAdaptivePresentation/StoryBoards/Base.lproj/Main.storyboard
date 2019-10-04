@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tsL-gZ-0tJ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ContactListViewController" customModule="UIAdaptivePresentation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A23-o8-Vjs">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Contact" id="SfO-Bj-x4D">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SfO-Bj-x4D" id="Tp8-eM-XnS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jzR-yM-lUC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="f4K-tG-apV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A23-o8-Vjs" secondAttribute="trailing" id="3a4-ql-4lV"/>
+                            <constraint firstItem="A23-o8-Vjs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="51k-tv-ePc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A23-o8-Vjs" secondAttribute="bottom" id="Qaf-2c-Az8"/>
+                            <constraint firstItem="A23-o8-Vjs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dvX-ze-H6y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="NbK-BD-uRg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1yd-3c-nDJ">
+                            <connections>
+                                <segue destination="h3L-r5-N06" kind="presentation" modalPresentationStyle="fullScreen" id="OKN-3i-5CF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="A23-o8-Vjs" id="sS4-hr-0r9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="137"/>
+        </scene>
+        <!--New Contact View Controller-->
+        <scene sceneID="E3t-U7-SHQ">
+            <objects>
+                <viewController id="h3L-r5-N06" customClass="NewContactViewController" customModule="UIAdaptivePresentation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4dV-0X-9jV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f91-EQ-9AY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="New Contact" id="Oik-c3-qL7">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gff-MA-XPx">
+                                            <connections>
+                                                <action selector="canceButtonPressed:" destination="h3L-r5-N06" id="sQE-PH-ru7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="o3v-fW-6BD">
+                                            <connections>
+                                                <action selector="doneButtonPressed:" destination="h3L-r5-N06" id="lu4-ex-4Hu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pNk-Lc-e1u">
+                                <rect key="frame" x="40" y="124" width="295" height="88"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVx-g2-lHh">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I72-Xr-61a">
+                                        <rect key="frame" x="0.0" y="54" width="295" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pNk-Lc-e1u" firstAttribute="leading" secondItem="WqF-LR-mfi" secondAttribute="leading" constant="40" id="EiE-bY-YXm"/>
+                            <constraint firstItem="f91-EQ-9AY" firstAttribute="trailing" secondItem="WqF-LR-mfi" secondAttribute="trailing" id="Gax-J9-sPG"/>
+                            <constraint firstItem="f91-EQ-9AY" firstAttribute="top" secondItem="WqF-LR-mfi" secondAttribute="top" id="HYr-z5-zLj"/>
+                            <constraint firstItem="pNk-Lc-e1u" firstAttribute="top" secondItem="f91-EQ-9AY" secondAttribute="bottom" constant="80" id="Jfd-aE-xwm"/>
+                            <constraint firstItem="f91-EQ-9AY" firstAttribute="leading" secondItem="WqF-LR-mfi" secondAttribute="leading" id="ZAJ-8u-0eC"/>
+                            <constraint firstItem="WqF-LR-mfi" firstAttribute="trailing" secondItem="pNk-Lc-e1u" secondAttribute="trailing" constant="40" id="ho3-5a-A7s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WqF-LR-mfi"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="o3v-fW-6BD" id="igI-LO-KV5"/>
+                        <outlet property="firstNameTextField" destination="yVx-g2-lHh" id="1oO-fB-qdU"/>
+                        <outlet property="lastNameTextField" destination="I72-Xr-61a" id="SqU-m3-RDc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="abo-sK-Jzk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1638" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="G85-ZS-PpQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tsL-gZ-0tJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Q2U-NL-aIF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QZ8-Rj-B5t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uft-63-oBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
