@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Contacts" id="NbK-BD-uRg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1yd-3c-nDJ">
                             <connections>
-                                <segue destination="h3L-r5-N06" kind="presentation" modalPresentationStyle="fullScreen" id="OKN-3i-5CF"/>
+                                <segue destination="h3L-r5-N06" kind="presentation" id="OKN-3i-5CF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -63,11 +63,11 @@
             <objects>
                 <viewController id="h3L-r5-N06" customClass="NewContactViewController" customModule="UIAdaptivePresentation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4dV-0X-9jV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f91-EQ-9AY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <items>
                                     <navigationItem title="New Contact" id="Oik-c3-qL7">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gff-MA-XPx">
@@ -84,7 +84,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pNk-Lc-e1u">
-                                <rect key="frame" x="40" y="124" width="295" height="88"/>
+                                <rect key="frame" x="40" y="136" width="295" height="88"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVx-g2-lHh">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="34"/>

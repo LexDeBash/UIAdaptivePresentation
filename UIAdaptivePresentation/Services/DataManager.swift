@@ -18,7 +18,6 @@ class DataManager {
     func saveContact(_ contact: String) {
         var contacts = fetchContacts()
         contacts.append(contact)
-        print(contacts)
         userDefaults.set(contacts, forKey: contactKey)
     }
     
