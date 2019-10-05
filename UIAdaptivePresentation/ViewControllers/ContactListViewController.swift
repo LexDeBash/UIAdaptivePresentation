@@ -14,18 +14,15 @@ class ContactListViewController: UIViewController {
     
     private var contacts: [String] = []
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print(#function)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         contacts = DataManager.shared.fetchContacts()
-        tableView.reloadData()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print(#function)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let newContactVC = segue.destination as! NewContactViewController
+        newContactVC.delegate = self
     }
-
 }
 
 extension ContactListViewController: UITableViewDataSource {
@@ -51,5 +48,12 @@ extension ContactListViewController: UITableViewDelegate {
             contacts.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+}
+
+extension ContactListViewController: NewContactViewControllerDelegate {
+    func saveContact(_ contact: String) {
+        contacts.append(contact)
+        tableView.reloadData()
     }
 }
