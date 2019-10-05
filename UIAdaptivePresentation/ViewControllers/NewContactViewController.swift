@@ -33,12 +33,7 @@ class NewContactViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
-        guard let firstName = firstNameTextField.text else { return }
-        guard let lastName = lastNameTextField.text else { return }
-        let fullName = "\(firstName) \(lastName)"
-        DataManager.shared.saveContact(fullName)
-        delegate.saveContact(fullName)
-        dismiss(animated: true)
+        saveAndExit()
     }
     
     @IBAction func canceButtonPressed(_ sender: UIBarButtonItem) {
@@ -51,22 +46,29 @@ class NewContactViewController: UIViewController {
         isModalInPresentation = !firstName.isEmpty ? true : false
     }
     
+    private func saveAndExit() {
+        guard let firstName = firstNameTextField.text else { return }
+        guard let lastName = lastNameTextField.text else { return }
+        let fullName = "\(firstName) \(lastName)"
+        DataManager.shared.saveContact(fullName)
+        delegate.saveContact(fullName)
+        dismiss(animated: true)
+    }
+    
     private func showAlertSheet() {
-        let alertSheet = UIAlertController(title: "Blah", message: "Blah-blah-blah", preferredStyle: .actionSheet)
-        let saveAction = UIAlertAction(title: "Save Contact", style: .default) { _ in
-            guard let firstName = self.firstNameTextField.text else { return }
-            guard let lastName = self.lastNameTextField.text else { return }
-            let fullName = "\(firstName) \(lastName)"
-            DataManager.shared.saveContact(fullName)
-            self.delegate.saveContact(fullName)
+        let alertSheet = UIAlertController(
+            title: "Выберите действие",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        let saveAction = UIAlertAction(title: "Сохранить контакт", style: .default) { _ in
+            self.saveAndExit()
+        }
+        let deleteContact = UIAlertAction(title: "Не сохранять контакт", style: .destructive) { _ in
             self.dismiss(animated: true)
         }
-        
-        let deleteContact = UIAlertAction(title: "Delete Contact", style: .destructive) { _ in
-            self.dismiss(animated: true)
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
         
         alertSheet.addAction(saveAction)
         alertSheet.addAction(deleteContact)
