@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Contacts" id="NbK-BD-uRg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1yd-3c-nDJ">
                             <connections>
-                                <segue destination="h3L-r5-N06" kind="presentation" id="OKN-3i-5CF"/>
+                                <segue destination="h3L-r5-N06" kind="presentation" modalPresentationStyle="automatic" id="OKN-3i-5CF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

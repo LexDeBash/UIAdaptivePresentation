@@ -19,12 +19,12 @@ class NewContactViewController: UIViewController {
     @IBOutlet var lastNameTextField: UITextField!
     
     var delegate: NewContactViewControllerDelegate!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presentationController?.delegate = self
-        
+                
         firstNameTextField.addTarget(
             self,
             action: #selector(firstNameTextFieldDidChanged),
@@ -51,7 +51,9 @@ class NewContactViewController: UIViewController {
         guard let lastName = lastNameTextField.text else { return }
         let fullName = "\(firstName) \(lastName)"
         DataManager.shared.saveContact(fullName)
+        
         delegate.saveContact(fullName)
+        
         dismiss(animated: true)
     }
     
@@ -79,10 +81,7 @@ class NewContactViewController: UIViewController {
 }
 
 extension NewContactViewController: UIAdaptivePresentationControllerDelegate {
-    
     func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
-        if doneButton.isEnabled {
-            showAlertSheet()
-        }
+        showAlertSheet()
     }
 }
