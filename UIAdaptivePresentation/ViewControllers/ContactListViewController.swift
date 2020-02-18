@@ -22,7 +22,7 @@ class ContactListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let newContactVC = segue.destination as! NewContactViewController
         newContactVC.delegate = self
-        newContactVC.modalPresentationStyle = .fullScreen
+//        newContactVC.modalPresentationStyle = .fullScreen
     }
 }
 
